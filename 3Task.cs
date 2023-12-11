@@ -5,23 +5,29 @@ using System.Windows.Forms;
 namespace ViewerDiscrationIsAdvised {
     internal class _3Task{
         private CashManager _cashManager = new CashManager();
-        private int deposit = 0;
-
-        private Boolean check(int deposite){
-            return deposit == 15;
-        }
+        private DepositeManager _depositeManager = new DepositeManager();
+        
 
         public void PayForDrink(){
-            _cashManager.DecreaseCash(15);
-            MessageBox.Show("Пиво успешно куплено!");
+            _depositeManager.PriceCheck();
         }
 
-        private void SetDeposite(int newDeposit){
-            if (newDeposit % 5 == 0) deposit += newDeposit;
-            else MessageBox.Show("Внесение монет достоинством 5 или 10 рублей");
+        public string GetDeposit(){
+            return _depositeManager.ArraySum() + " руб.";
         }
 
-        private void Cancel(){
+        public void SetDeposite5(){
+            _depositeManager.Increase5();
+            MessageBox.Show("Внесено 5 рублей");
+        }
+
+        public void SetDeposite10(){
+            _depositeManager.Increase10();
+            MessageBox.Show("Внесено 10 рублей");
+        }
+
+        public void Cancel(){
+            _depositeManager.Cancel();
             MessageBox.Show("Покупка отменена");
         }
     }

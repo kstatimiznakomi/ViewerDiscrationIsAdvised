@@ -55,6 +55,8 @@
       <DependentUpon>BalanceImprove.cs</DependentUpon>
     </Compile>
     <Compile Include="CashManager.cs" />
+    <Compile Include="DepositeManager.cs" />
+    <Compile Include="Drinks.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

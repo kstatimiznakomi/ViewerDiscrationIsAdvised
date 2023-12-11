@@ -29,6 +29,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.balanceText = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.deposit = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.moneyTaker10 = new System.Windows.Forms.PictureBox();
             this.moneyTaker5 = new System.Windows.Forms.PictureBox();
             this.cancel = new System.Windows.Forms.Button();
@@ -103,6 +105,8 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.deposit);
+            this.groupBox8.Controls.Add(this.label3);
             this.groupBox8.Controls.Add(this.moneyTaker10);
             this.groupBox8.Controls.Add(this.moneyTaker5);
             this.groupBox8.Controls.Add(this.cancel);
@@ -111,9 +115,24 @@
             this.groupBox8.Controls.Add(this.label1);
             this.groupBox8.Location = new System.Drawing.Point(77, 62);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(558, 431);
+            this.groupBox8.Size = new System.Drawing.Size(558, 483);
             this.groupBox8.TabIndex = 4;
             this.groupBox8.TabStop = false;
+            // 
+            // deposit
+            // 
+            this.deposit.Location = new System.Drawing.Point(346, 435);
+            this.deposit.Name = "deposit";
+            this.deposit.Size = new System.Drawing.Size(206, 29);
+            this.deposit.TabIndex = 13;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(245, 435);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 29);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Внесено";
             // 
             // moneyTaker10
             // 
@@ -245,6 +264,9 @@
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label deposit;
 
         private System.Windows.Forms.Button button3;
 

@@ -9,11 +9,14 @@ namespace ViewerDiscrationIsAdvised {
 
         public Form1() {
             InitializeComponent();
+            ForDrinksTask();
+        }
+
+        private void ForDrinksTask(){
             balanceText.Text = "Баланс: ";
             cashManager.CheckForLimitCash();
             balance.Text = cashManager.renderManager(cashManager.GetCash());
-            moneyTaker5.Image = new Bitmap(@".\moneyClose.png");
-            moneyTaker10.Image = new Bitmap(@".\moneyClose.png");
+            deposit.Text = threeTask.GetDeposit();
             if (balance.Text == "" || balance.Text == "0") {
                 btnsUnavailable();
             }
@@ -39,19 +42,10 @@ namespace ViewerDiscrationIsAdvised {
             moneyTaker5.Enabled = false;
             moneyTaker10.Enabled = false;
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e){
-            
-        }
-
         private void button3_Click(object sender, EventArgs e){
             using (BalanceImprove improve = new BalanceImprove()){
                 improve.ShowDialog(this);
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e) {
-
         }
 
         private void balance_TextChanged(object sender, EventArgs e) {
@@ -66,17 +60,25 @@ namespace ViewerDiscrationIsAdvised {
         private void pay_Click(object sender, EventArgs e){
             threeTask.PayForDrink();
             SetBalanceOnForm();
+            deposit.Text = threeTask.GetDeposit();
         }
 
         private void cancel_Click(object sender, EventArgs e){
+            threeTask.Cancel();
+            SetBalanceOnForm();
+            deposit.Text = threeTask.GetDeposit();
         }
 
         private void moneyTaker5_Click(object sender, EventArgs e){
-            
+            threeTask.SetDeposite5();
+            SetBalanceOnForm();
+            deposit.Text = threeTask.GetDeposit();
         }
 
         private void moneyTaker10_Click(object sender, EventArgs e){
-            
+            threeTask.SetDeposite10();
+            SetBalanceOnForm();
+            deposit.Text = threeTask.GetDeposit();
         }
     }
 }

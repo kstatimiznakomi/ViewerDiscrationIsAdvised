@@ -31,7 +31,7 @@ namespace ViewerDiscrationIsAdvised{
                 _current = Convert.ToInt32(File.ReadAllText(_path));
                 File.WriteAllText(
                     _path, 
-                    _current.ToString().Remove(9, 999999999)
+                    _current.ToString().Remove(9, _current.ToString().Length)
                     );
             }
         }
@@ -51,15 +51,6 @@ namespace ViewerDiscrationIsAdvised{
             File.WriteAllText(_path,Convert.ToString(_current + Cash));
         }
 
-        public void SaveCash(){
-            
-        }
-
-        public void AddCash(int Cash){
-            if (_current + Cash <= 100000000) _current += Cash;
-            else MessageBox.Show("Внесена слишком большая сумма!");
-        }
-
         public void DecreaseCash(int Cash){
             SetCash();
             File.WriteAllText(_path,Convert.ToString(_current - Cash));
@@ -68,9 +59,6 @@ namespace ViewerDiscrationIsAdvised{
         public int GetCash(){
             SetCash();
             return _current;
-        }
-        private void Payback(int deposit){
-            _current += deposit;
         }
     }
 }
