@@ -38,6 +38,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.ifDivide = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.onThreeDivide = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -47,6 +50,7 @@
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moneyTaker10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moneyTaker5)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -196,6 +200,9 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.ifDivide);
+            this.groupBox5.Controls.Add(this.label4);
+            this.groupBox5.Controls.Add(this.onThreeDivide);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox5.Location = new System.Drawing.Point(672, 27);
             this.groupBox5.Name = "groupBox5";
@@ -203,6 +210,30 @@
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "groupBox5";
+            // 
+            // ifDivide
+            // 
+            this.ifDivide.Location = new System.Drawing.Point(319, 353);
+            this.ifDivide.Name = "ifDivide";
+            this.ifDivide.Size = new System.Drawing.Size(307, 29);
+            this.ifDivide.TabIndex = 14;
+            this.ifDivide.Text = "_";
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(319, 109);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(182, 29);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Делимость на 3";
+            // 
+            // onThreeDivide
+            // 
+            this.onThreeDivide.Location = new System.Drawing.Point(356, 201);
+            this.onThreeDivide.Name = "onThreeDivide";
+            this.onThreeDivide.Size = new System.Drawing.Size(102, 31);
+            this.onThreeDivide.TabIndex = 3;
+            this.onThreeDivide.TextChanged += new System.EventHandler(this.onThreeDivide_TextChanged);
             // 
             // groupBox4
             // 
@@ -261,9 +292,16 @@
             this.groupBox8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.moneyTaker10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moneyTaker5)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label ifDivide;
+
+        private System.Windows.Forms.TextBox onThreeDivide;
+        private System.Windows.Forms.Label label4;
 
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label deposit;

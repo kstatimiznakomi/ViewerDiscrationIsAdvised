@@ -5,6 +5,7 @@ using System.Windows.Forms;
 namespace ViewerDiscrationIsAdvised {
     public partial class Form1 : Form{
         private _3Task threeTask = new _3Task();
+        private _2Task twoTask = new _2Task();
         private CashManager cashManager = new CashManager();
 
         public Form1() {
@@ -79,6 +80,19 @@ namespace ViewerDiscrationIsAdvised {
             threeTask.SetDeposite10();
             SetBalanceOnForm();
             deposit.Text = threeTask.GetDeposit();
+        }
+
+        private void onThreeDivide_TextChanged(object sender, EventArgs e){
+            try{
+                if (onThreeDivide.Text != String.Empty || onThreeDivide.Text != ""){
+                    ifDivide.Text = twoTask.Render(Convert.ToInt32(onThreeDivide.Text));
+                }
+                else ifDivide.Text = "_";
+            }
+            catch (Exception exception){
+                ifDivide.Text = "Введите число!";
+            }
+           
         }
     }
 }

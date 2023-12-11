@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="1Task.cs" />
+    <Compile Include="2Task.cs" />
     <Compile Include="3Task.cs" />
     <Compile Include="BalanceImprove.cs">
       <SubType>Form</SubType>

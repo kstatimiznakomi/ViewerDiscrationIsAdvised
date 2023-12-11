@@ -4,7 +4,6 @@ using System.Windows.Forms;
 
 namespace ViewerDiscrationIsAdvised {
     internal class _3Task{
-        private CashManager _cashManager = new CashManager();
         private DepositeManager _depositeManager = new DepositeManager();
         
 
