@@ -27,7 +27,7 @@ namespace ViewerDiscrationIsAdvised{
                 case 2:
                     return "Состояние 3";
             }
-            return Convert.ToString(num % 3);
+            return null;
         }
     }
 }
