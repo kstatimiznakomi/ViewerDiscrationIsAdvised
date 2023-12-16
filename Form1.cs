@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace ViewerDiscrationIsAdvised {
@@ -13,6 +12,7 @@ namespace ViewerDiscrationIsAdvised {
             ForDrinksTask();
         }
 
+        // Напитки
         private void ForDrinksTask(){
             balanceText.Text = "Баланс: ";
             cashManager.CheckForLimitCash();
@@ -82,17 +82,21 @@ namespace ViewerDiscrationIsAdvised {
             deposit.Text = threeTask.GetDeposit();
         }
 
+        /// Остаток от деления на 3
         private void onThreeDivide_TextChanged(object sender, EventArgs e){
             try{
                 if (onThreeDivide.Text != String.Empty || onThreeDivide.Text != ""){
-                    ifDivide.Text = twoTask.Render(Convert.ToInt32(onThreeDivide.Text));
+                    ifDivide.Text = twoTask.DivideRemain(Convert.ToInt32(onThreeDivide.Text)).ToString();
+                    state.Text = twoTask.DivideRemainStates(Convert.ToInt32(onThreeDivide.Text));
                 }
-                else ifDivide.Text = "_";
+                else{
+                    ifDivide.Text = "";
+                    state.Text = "";
+                }
             }
             catch (Exception exception){
                 ifDivide.Text = "Введите число!";
             }
-           
         }
     }
 }
