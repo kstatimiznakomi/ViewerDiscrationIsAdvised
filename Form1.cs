@@ -1,15 +1,24 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ViewerDiscrationIsAdvised {
     public partial class Form1 : Form{
+        private _1Task oneTask = new _1Task();
         private _3Task threeTask = new _3Task();
         private _2Task twoTask = new _2Task();
         private CashManager cashManager = new CashManager();
+        private int countOfDots = 0;
 
         public Form1() {
             InitializeComponent();
             ForDrinksTask();
+        }
+        
+        // Дробность числа
+        private void textBox1_TextChanged(object sender, EventArgs e){
+            taskOneState.Text = oneTask.GetState(numberOne.Text);
+            numberType.Text = oneTask.GetNumberType();
         }
 
         // Напитки

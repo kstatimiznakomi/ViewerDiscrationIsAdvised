@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace ViewerDiscrationIsAdvised{
     public class _4Task {
-        private int ToTrenary(int num){
+        private int ToTernary(int num){
             string number = "";
             while (num > 0){
                 number += (num % 3).ToString();
