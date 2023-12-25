@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace ViewerDiscrationIsAdvised {
@@ -74,9 +73,36 @@ namespace ViewerDiscrationIsAdvised {
         }
 
         private void cancel_Click(object sender, EventArgs e){
-            threeTask.Cancel();
-            SetBalanceOnForm();
-            deposit.Text = threeTask.GetDeposit();
+            switch (threeTask.GetState()){
+                case _3Task.States.НачальноеСостояние:
+                    threeTask.Cancel();
+                    MessageBox.Show(threeTask.GetState().ToString());
+                    break;
+                case _3Task.States.РублейВнесено5:
+                    threeTask.Cancel();
+                    SetBalanceOnForm();
+                    deposit.Text = threeTask.GetDeposit();
+                    MessageBox.Show(threeTask.GetState().ToString());
+                    break;
+                case _3Task.States.РублейВнесено10:
+                    threeTask.Cancel();
+                    SetBalanceOnForm();
+                    deposit.Text = threeTask.GetDeposit();
+                    MessageBox.Show(threeTask.GetState().ToString());
+                    break;
+                case _3Task.States.РублейВнесено15:
+                    threeTask.Cancel();
+                    SetBalanceOnForm();
+                    deposit.Text = threeTask.GetDeposit();
+                    MessageBox.Show(threeTask.GetState().ToString());
+                    break;
+                case _3Task.States.ВнесеноБольше15Рублей:
+                    threeTask.Cancel();
+                    SetBalanceOnForm();
+                    deposit.Text = threeTask.GetDeposit();
+                    MessageBox.Show(threeTask.GetState().ToString());
+                    break;
+            }
         }
 
         private void moneyTaker5_Click(object sender, EventArgs e){

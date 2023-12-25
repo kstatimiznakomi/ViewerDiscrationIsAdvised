@@ -2,6 +2,18 @@
 
 namespace ViewerDiscrationIsAdvised{
     public class _2Task {
+        private States state = States.НачальноеСостояние;
+
+        public States GetState(){
+            return state;
+        }
+
+        public enum States{
+            НачальноеСостояние,
+            Состояние1,
+            Состояние2,
+            Состояние3
+        };
         private string Render(int number){
             return NumInnerSum(number) % 3 == 0 ? "Делится" : "Не делится";
         }
@@ -21,11 +33,14 @@ namespace ViewerDiscrationIsAdvised{
         public string DivideRemainStates(int num){
             switch (num % 3){
                 case 0:
-                    return "Состояние 1";
+                    state = States.Состояние1;
+                    return state.ToString();
                 case 1:
-                    return "Состояние 2";
+                    state = States.Состояние2;
+                    return state.ToString();
                 case 2:
-                    return "Состояние 3";
+                    state = States.Состояние3;
+                    return state.ToString();
             }
             return null;
         }

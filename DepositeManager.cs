@@ -25,13 +25,10 @@ namespace ViewerDiscrationIsAdvised{
             _cashManager.DecreaseCash(10);
         }
 
-        public void PriceCheck(){
-            if (ArraySum() >= Convert.ToInt32(Drinks.Пиво)){
-                _cashManager.IncreaseCash(PaybackSuccess());
-                MessageBox.Show("Пиво успешно куплено!");
-                deposite.Clear();
-            }
-            else MessageBox.Show("Внесена недостаточная сумма");
+        public void Pay(){
+            _cashManager.IncreaseCash(PaybackSuccess());
+            MessageBox.Show("Пиво успешно куплено!");
+            deposite.Clear();
         }
 
         public void Cancel(){
@@ -40,7 +37,7 @@ namespace ViewerDiscrationIsAdvised{
         }
 
         private void PaybackCancel(){
-            _cashManager.IncreaseCash(ArraySum()); 
+            _cashManager.IncreaseCash(ArraySum());
         }
 
         private int PaybackSuccess(){
